@@ -2,7 +2,7 @@
 <configuration>
   <site>
     <!--
-       - siteName: Name of site used in the page titles. Default: SeedDMS
+       - siteName: Name of site used in the page titles. Default: Azentio DMS
        - footNote: Message to display at the bottom of every page
        - printDisclaimer: if true the disclaimer message the lang.inc files will be print on the bottom of the page
        - language: default language (name of a subfolder in folder "languages")
@@ -10,16 +10,7 @@
        - previewWidthList: Preview image width in folder list
        - previewWidthDetail: Preview image width in document view
     -->
-    <display
-      siteName = "SeedDMS"
-      footNote = "SeedDMS free document management system - www.seeddms.org"
-      printDisclaimer = "true"
-      language = "en_GB"
-      theme = "bootstrap4"
-      previewWidthList = "40"
-      previewWidthDetail = "100"
-      onePageMode="true"
-    />
+    <display siteName="AzentioDMS" footNote="" printDisclaimer="false" language="en_GB" theme="bootstrap4" previewWidthList="40" previewWidthDetail="100" onePageMode="true" dateformat="" datetimeformat="" availablelanguages="en_GB" overrideTheme="false" previewWidthMenuList="40" previewWidthDropFolderList="100" showFullPreview="true" convertToPdf="true" maxItemsPerPage="0" incItemsPerPage="0" markdownComments="false"/>
     <!--
        - strictFormCheck: Strict form checking. If set to true, then all fields in the form will be checked for a value. If set to false, then (most) comments and keyword fields become optional. Comments are always required when submitting a review or overriding document status.
        - viewOnlineFileTypes: files with one of the following endings can be viewed online (USE ONLY LOWER CASE CHARACTERS)
@@ -44,42 +35,15 @@
        - defaultDocPosition: Default position for a new document. 'start', 'end', or ''
        - defaultFolderPosition: Default position for a new folder. 'start', 'end', or ''
     -->
-    <edition
-      strictFormCheck = "false"
-      viewOnlineFileTypes = ".txt;.text;.html;.htm;.xml;.pdf;.gif;.png;.jpg;.jpeg;.mp4"
-      enableConverting = "true"
-      enableEmail = "true"
-      enableUsersView = "true"
-      enableFullSearch = "false"
-      enableClipboard = "false"
-      enableFolderTree = "true"
-      expandFolderTree = "1"
-      enableLanguageSelector = "true"
-      stopWordsFile = ""
-      sortUsersInList = ""
-      enableDropUpload = "false"
-      enableRecursiveCount = "false"
-      maxRecursiveCount = "0"
-      enableThemeSelector = "true"
-      fullSearchEngine = "sqlitefts"
-      sortFoldersDefault = "u"
-      defaultDocPosition = "end"
-      defaultFolderPosition = "end"
-    />
+    <edition strictFormCheck="false" viewOnlineFileTypes=".txt;.text;.html;.htm;.xml;.pdf;.gif;.png;.jpg;.jpeg;.mp4" enableConverting="true" enableEmail="false" enableUsersView="true" enableFullSearch="false" enableClipboard="true" enableFolderTree="true" expandFolderTree="2" enableLanguageSelector="true" stopWordsFile="" sortUsersInList="" enableDropUpload="true" enableRecursiveCount="false" maxRecursiveCount="0" enableThemeSelector="true" fullSearchEngine="sqlitefts" sortFoldersDefault="u" defaultDocPosition="end" defaultFolderPosition="end" inlineEditing="true" noDocumentFormFields="" noFolderFormFields="" editOnlineFileTypes="" enableSessionList="true" enableMenuTasks="true" tasksInMenu="" enableDropFolderList="true" enableMultiUpload="true" daysPastDashboard="0" enableHelp="true" maxSizeForFullText="0" defaultSearchMethod="database" suggestTerms="" showSingleSearchHit="false" libraryFolder="0"/>
     <!--
        - enableCalendar: enable/disable calendar
        - calendarDefaultView: calendar default view ("w" for week,"m" for month,"y" for year)
        - firstDayOfWeek: first day of the week (0=sunday, 6=saturday)
     -->
-    <calendar
-      enableCalendar = "true"
-      calendarDefaultView = "y"
-      firstDayOfWeek = "0"
-    />
-    <webdav
-      enableWebdavReplaceDoc="true"
-    />
-  </site>
+    <calendar enableCalendar="true" calendarDefaultView="m" firstDayOfWeek="1"/>
+    <webdav enableWebdavReplaceDoc="true"/>
+  <extensionmgr enableExtensionDownload="true" enableExtensionImport="true" enableExtensionImportFromRepository="true"/></site>
   <system>
     <!--
        - rootDir: Path to where SeedDMS is located
@@ -99,20 +63,10 @@
        - cacheDir: where the preview images are saved
        - backupDir: where the backups are saved
     -->
-    <server
-      rootDir = ""
-      httpRoot = "/seeddms60x/"
-      contentDir = ""
-      stagingDir = ""
-      luceneDir = ""
-      logFileEnable = "true"
-      logFileRotation = "d"
-      enableLargeFileUpload = "false"
-      partitionSize = "2000000"
-      dropFolderDir = ""
-      cacheDir = ""
-      backupDir = ""
-    />
+    
+<server rootDir="/var/www/html/AzentioDms/" httpRoot="/seeddms/" contentDir="/var/www/html/AzentioDms/data/" stagingDir="/var/www/html/AzentioDms/data/staging" luceneDir="/var/www/html/AzentioDms/data/lucene/" logFileEnable="true" logFileRotation="d" enableLargeFileUpload="true" partitionSize="2000000" cacheDir="/var/www/html/AzentioDms/data/cache/" dropFolderDir="" backupDir="/var/www/html/AzentioDms/data/backup/" baseUrl="" checkOutDir="" createCheckOutDir="false" repositoryUrl="" proxyUrl="" proxyUser="" proxyPassword="" maxUploadSize="" enableXsendfile="false">
+    </server>
+
     <!--
        - enableGuestLogin: If you want anybody to login as guest, set the following line to true
        -                   note: guest login should be used only in a trusted environment
@@ -132,23 +86,7 @@
        - encryptionKey: arbitrary string used for creating form tokens
        - cookieLifetime: lifetime of cookie in seconds, set to 0 for session cookies
     -->
-    <authentication
-      enableGuestLogin = "false"
-      enablePasswordForgotten = "false"
-      restricted = "true"
-      enableUserImage = "false"
-      disableSelfEdit = "false"
-      disableChangePassword = "false"
-      passwordStrength = "0"
-      passwordStrengthAlgorithm = "simple"
-      passwordExpiration = "0"
-      passwordHistory = "0"
-      loginFailure = "0"
-      autoLoginUser = "0"
-      quota = "0"
-      undelUserIds = ""
-      encryptionKey = "b8c75fa53c0c7a18a84adb6ca815bd94"
-      cookieLifetime = "0">
+    <authentication enableGuestLogin="false" enablePasswordForgotten="false" restricted="true" enableUserImage="true" disableSelfEdit="false" disableChangePassword="false" passwordStrength="0" passwordStrengthAlgorithm="simple" passwordExpiration="0" passwordHistory="0" loginFailure="0" autoLoginUser="0" quota="0" undelUserIds="" encryptionKey="b8c75fa53c0c7a18a84adb6ca815bd94" cookieLifetime="0" enableGuestAutoLogin="false" enable2FactorAuthentication="false" defaultAccessDocs="0">
       <connectors>
         <!-- ***** CONNECTOR LDAP  *****
            - enable: enable/disable connector
@@ -161,17 +99,7 @@
            - bindPw: use this password for a first step bind
            - filter: Additional filters which are to be checked
         -->
-        <connector
-          enable = "false"
-          type = "ldap"
-          host = "ldaps://ldap.host.com"
-          port = "389"
-          baseDN = ""
-          bindDN = ""
-          bindPw = ""
-          filter = ""
-          groupField = ""
-        />
+        <connector enable="false" type="ldap" host="ldaps://ldap.host.com" port="389" baseDN="" bindDN="" bindPw="" filter="" groupField=""/>
         <!-- ***** CONNECTOR Microsoft Active Directory  *****
            - enable: enable/disable connector
            - type: type of connector ldap / AD
@@ -183,18 +111,7 @@
            - filter: Additional filters which are to be checked
            - accountDomainName: sample: example.com
         -->
-        <connector
-          enable = "false"
-          type = "AD"
-          host = "ldap.example.com"
-          port = "389"
-          baseDN = ""
-          accountDomainName = "example.com"
-          bindDN = ""
-          bindPw = ""
-          filter = ""
-          groupField = ""
-        />
+        <connector enable="false" type="AD" host="ldap.example.com" port="389" baseDN="" accountDomainName="example.com" bindDN="" bindPw="" filter="" groupField=""/>
       </connectors>
     </authentication>
     <!--
@@ -205,14 +122,18 @@
        - dbPass: password for database-access
        - doNotCheckVersion: Whether or not to check the database schema for its correct version.
     -->
-    <database
+    <!--
+<database
       dbDriver = "sqlite"
       dbHostname = ""
-      dbDatabase = ""
+      dbDatabase = "seeddms"
       dbUser = ""
       dbPass = ""
       doNotCheckVersion = "false"
     />
+-->
+<database dbDriver="mysql" dbHostname="159.69.6.137" dbDatabase="azentio_dms" dbUser="root" dbPass="Bne#JD29iDJN3#ne" doNotCheckVersion="false" doNotCheckDBVersion="false">
+    </database>
     <!--
        - smtpServer: SMTP Server hostname
        - smtpPort: SMTP Server port
@@ -220,13 +141,7 @@
        - smtpUser: user name used for authenticating against smtp server
        - smtpPassword: password used for authenticating against smtp server
     -->
-    <smtp
-      smtpServer = "localhost"
-      smtpPort = "25"
-      smtpSendFrom = "seeddms@localhost"
-      smtpUser = ""
-      smtpPassword = ""
-    />
+    <smtp smtpServer="localhost" smtpPort="25" smtpSendFrom="seeddms@localhost" smtpUser="" smtpPassword=""/>
   </system>
   <advanced>
     <!--
@@ -234,20 +149,13 @@
        - rootFolderID: ID of root-folder (mostly no need to change)
        - showMissingTranslations: set true if missing translation shall be listed at end of page
     -->
-    <display
-      siteDefaultPage = ""
-      rootFolderID = "1"
-      showMissingTranslations = "false"
-    />
+    <display siteDefaultPage="" rootFolderID="1" showMissingTranslations="false" useHomeAsRootFolder="false"/>
     <!--
        - guestID: ID of guest-user used when logged in as guest (mostly no need to change)
        - adminIP: if enabled admin can login only by specified IP addres, leave empty to avoid the control
        -          NOTE: works only with local autentication (no LDAP)
     -->
-    <authentication
-      guestID = "2"
-      adminIP = ""
-    />
+    <authentication guestID="2" adminIP="" apiKey="" apiUserId="0" apiOrigin=""/>
     <!-- enableAdminRevApp: false to don't list administrator as reviewer/approver
        - versioningFileName: the name of the versioning info file created by the backup tool
        - workflowMode: 'traditional' or 'advanced'
@@ -260,19 +168,7 @@
        - presetExpirationDate: set to time period if each document shall expire
        - overrideMimeType: set to true if the mimetype of a document version is determined by the server
     -->
-    <edition
-      enableAdminRevApp = "false"
-      versioningFileName = "versioning_info.txt"
-      workflowMode = "traditional"
-      enableVersionDeletion = "true"
-      enableVersionModification = "true"
-      enableDuplicateDocNames = "true"
-      enableDuplicateSubFolderNames = "true"
-      enableOwnerRevApp = "false"
-      enableSelfRevApp = "false"
-      presetExpirationDate = ""
-      overrideMimeType = "false"
-    />
+    <edition enableAdminRevApp="true" versioningFileName="versioning_info.txt" workflowMode="advanced" enableVersionDeletion="true" enableVersionModification="true" enableDuplicateDocNames="true" enableDuplicateSubFolderNames="false" enableOwnerRevApp="true" enableSelfRevApp="false" presetExpirationDate="" overrideMimeType="false" enableHiddenRevApp="false" enableUpdateRevApp="false" enableRemoveRevApp="false" enableSelfReceipt="false" enableAdminReceipt="false" enableOwnerReceipt="false" enableUpdateReceipt="false" enableFilterReceipt="false" initialDocumentStatus="5" enableReceiptWorkflow="true" enableReceiptReject="true" enableRevisionWorkflow="true" enableRevisionOneVoteReject="false" allowReviewerOnly="false" allowChangeRevAppInProcess="true" enableCancelCheckout="false" advancedAcl="true" removeFromDropFolder="false" uploadedAttachmentIsPublic="false"/>
     <!--
        - coreDir: Path to SeedDMS_Core (optional)
        - luceneClassDir: Path to SeedDMS_Lucene (optional)
@@ -287,26 +183,13 @@
        - maxExecutionTime: maximum script execution time, this cannot be larger than the value set in php.ini
        - cmdTimeout: timeout in sec. for external commands
     -->
-    <server
-      coreDir = ""
-      luceneClassDir = ""
-      contentOffsetDir = "1048576"
-      maxDirID = "0"
-      updateNotifyTime = "86400"
-      extraPath = ""
-      maxExecutionTime = "30"
-      cmdTimeout = "10"
-    />
+    <server coreDir="" luceneClassDir="" contentOffsetDir="1048576" maxDirID="0" updateNotifyTime="86400" extraPath="/var/www/html/AzentioDms/pear/\" maxExecutionTime="30" cmdTimeout="10" enableDebugMode="true"/>
     <!--
        - enableNotificationAppRev: set to true if reviewers and approvers shall be informed about a pending review/approval
        - enableOwnerNotification: XXX
        - enableNotificationWorkflow: set to true if the users in the workflow shall be informed
     -->
-    <notification
-      enableNotificationAppRev = "true"
-      enableOwnerNotification = "false"
-      enableNotificationWorkflow = "false"
-      />
+    <notification enableNotificationAppRev="true" enableOwnerNotification="false" enableNotificationWorkflow="true"/>
     <converters target="fulltext">
       <converter mimeType="application/pdf">pdftotext -nopgbrk %s - | sed -e 's/ [a-zA-Z0-9.]\{1\} / /g' -e 's/[0-9.]//g'</converter>
       <converter mimeType="application/msword">catdoc %s</converter>
@@ -325,9 +208,5 @@
       <converter mimeType="text/plain">a2ps -1 -a1  -R -B -o - '%f' | gs -dBATCH -dNOPAUSE -sDEVICE=pngalpha -dFirstPage=1 -dLastPage=1 -dPDFFitPage -r72x72 -sOutputFile=- -q - | convert  -resize %wx png:- '%o'</converter>
     </converters>
   </advanced>
-  <extensions>
-    <extension name="example" disable="true">
-      <parameter name="__disable__">1</parameter>
-    </extension>
-  </extensions>
-</configuration>
+  
+<extensions><extension name="example" disable="true"><parameter name="__disable__">1</parameter></extension><extension name="ocr_pdf" disable="false"><parameter name="image_dpi">72</parameter><parameter name="ocrpdfpath">C:\Python\LocalCache\local-packages\Python312\Scripts\ocrmypdf</parameter><parameter name="timeout">300</parameter></extension></extensions></configuration>
