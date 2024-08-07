@@ -132,7 +132,7 @@
       doNotCheckVersion = "false"
     />
 -->
-<database dbDriver="mysql" dbHostname="159.69.6.137" dbDatabase="azentio_dms" dbUser="root" dbPass="Bne#JD29iDJN3#ne" doNotCheckVersion="false" doNotCheckDBVersion="false">
+<database dbDriver="mysql" dbHostname="10.0.102" dbPort="5522" dbDatabase="azentio_dms" dbUser="root" dbPass="Bne#JD29iDJN3#ne" doNotCheckVersion="false" doNotCheckDBVersion="false">
     </database>
     <!--
        - smtpServer: SMTP Server hostname
