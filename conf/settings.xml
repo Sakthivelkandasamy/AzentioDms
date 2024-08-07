@@ -64,7 +64,7 @@
        - backupDir: where the backups are saved
     -->
     
-<server rootDir="/var/www/html/AzentioDms/" httpRoot="/seeddms/" contentDir="/var/www/html/AzentioDms/data/" stagingDir="/var/www/html/AzentioDms/data/staging" luceneDir="/var/www/html/AzentioDms/data/lucene/" logFileEnable="true" logFileRotation="d" enableLargeFileUpload="true" partitionSize="2000000" cacheDir="/var/www/html/AzentioDms/data/cache/" dropFolderDir="" backupDir="/var/www/html/AzentioDms/data/backup/" baseUrl="" checkOutDir="" createCheckOutDir="false" repositoryUrl="" proxyUrl="" proxyUser="" proxyPassword="" maxUploadSize="" enableXsendfile="false">
+<server rootDir="/var/www/html/AzentioDms/" httpRoot="/seeddms/" contentDir="/s3/data/" stagingDir="/s3/data/staging" luceneDir="/s3/data/lucene/" logFileEnable="true" logFileRotation="d" enableLargeFileUpload="true" partitionSize="2000000" cacheDir="/s3/data/cache/" dropFolderDir="" backupDir="/s3/data/backup/" baseUrl="" checkOutDir="" createCheckOutDir="false" repositoryUrl="" proxyUrl="" proxyUser="" proxyPassword="" maxUploadSize="" enableXsendfile="false">
     </server>
 
     <!--
@@ -132,7 +132,7 @@
       doNotCheckVersion = "false"
     />
 -->
-<database dbDriver="mysql" dbHostname="10.0.102" dbPort="5522" dbDatabase="azentio_dms" dbUser="root" dbPass="Bne#JD29iDJN3#ne" doNotCheckVersion="false" doNotCheckDBVersion="false">
+<database dbDriver="mysql" dbHostname="10.0.10.2" dbPort="5522" dbDatabase="azentio_dms" dbUser="root" dbPass="Bne#JD29iDJN3#ne" doNotCheckVersion="false" doNotCheckDBVersion="false">
     </database>
     <!--
        - smtpServer: SMTP Server hostname
